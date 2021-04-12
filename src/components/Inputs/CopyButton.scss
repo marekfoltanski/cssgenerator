@@ -1,0 +1,19 @@
+@import '../../styles/_variables';
+@import '../../styles/_mixins';
+.copyButton{
+  position:relative;
+  background-color: $color1;
+  color: $colorLight;
+  padding: 4px 12px;
+  font-size: 14px;
+  display: inline-block;
+  border: 2px solid $color1;
+  border-radius: $borderRadiusSmall;
+  font-family: $fontFamily;
+  cursor: pointer;
+  @include transition();
+  &:hover{
+    background-color: $color2;
+    border-color: $color2;
+  }
+}

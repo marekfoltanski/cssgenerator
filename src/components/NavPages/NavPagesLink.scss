@@ -1,0 +1,52 @@
+@import '../../styles/_variables.scss';
+@import '../../styles/_mixins.scss';
+.navPages li {
+  display:inline-block;
+  margin: 0 12px;
+  a {
+     display: inline-block;
+     border: 2px solid $color1;
+     border-radius: $borderRadiusSmall;
+     background-color: transparent;
+     color: $color1;
+     padding: 10px 20px;
+     font-family: "Roboto Mono",monospace;
+     font-size: 16px;
+     outline: none;
+     cursor: pointer;
+     &:hover{
+       background-color: $color1;
+       color:$colorLight;
+     }
+     &.activeLink{
+       background-color: $color1;
+       color: $colorLight;
+     }
+   }
+}
+@media (max-width: 768px){
+  .navPages li{
+    margin: 15px;
+    a{
+      width: 160px;
+      padding: 15px 0;
+      font-size: 14px;
+    }
+  }
+}
+@media (max-width: 576px){
+  .navPages ul li{
+    margin:8px;
+    a{
+      width: 150px;
+    }
+  }
+}
+@media (max-width: 370px){
+  .navPages ul li{
+    margin:6px;
+    a{
+      width: 140px;
+    }
+  }
+}

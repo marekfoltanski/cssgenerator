@@ -1,0 +1,29 @@
+@mixin transition(){
+  -webkit-transition: all .2s ease-out;
+ -moz-transition: all .2s ease-out;
+ -o-transition: all .2s ease-out;
+ transition: all .2s ease-out;
+}
+@mixin scroll(){
+  &::-webkit-scrollbar {
+    padding-top:10px;
+    height:8px;
+    width: 8px;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $colorGrey;
+    border-radius: $borderRadiusSmall;
+    @include transition();
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: darken($colorGrey, 6%);
+  }
+}

@@ -1,0 +1,13 @@
+@import '../../../styles/_variables.scss';
+.generator__preview__boxShadow{
+  width: 300px;
+  height: 300px;
+  background-color: $colorGrey;
+  border-radius: $borderRadiusBig;
+}
+@media (max-width: 1199.98px){
+  .generator__preview__boxShadow {
+    width: 200px;
+    height: 200px;
+  }
+}

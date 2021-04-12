@@ -1,0 +1,14 @@
+@import "../../../styles/_variables.scss";
+.generator__preview__transform {
+  width: 300px;
+  height: 300px;
+  border-radius: 12px;
+  background-color: $color1;
+  transition: all 0.1s linear;
+}
+@media (max-width: 1199.98px) {
+  .generator__preview__transform {
+    width: 200px;
+    height: 200px;
+  }
+}

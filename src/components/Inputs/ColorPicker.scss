@@ -1,0 +1,39 @@
+@import '../../styles/_variables.scss';
+.chrome-picker{
+  position:absolute;
+  z-index:99;
+  bottom:40px;
+  right:0;
+  font-family:$fontFamily !important;
+  box-shadow: 4px 4px 12px rgba(66,68,90,0.3) !important;
+  input{
+    font-family:$fontFamily !important;
+    background-color:$colorGrey;
+    border-radius:$borderRadiusSmall !important;
+    box-shadow:none !important;
+  }
+  div{
+    border-radius: $borderRadiusSmall,
+  }
+}
+.pickerClose{
+  position: fixed;
+  top: 0;
+  right:0;
+  bottom: 0;
+  left:0;
+  &:focus{
+    outline: none;
+  }
+}
+.colorPicker__btn{
+  position: relative;
+  height: 2em;
+  width: 2em;
+  padding: .5em;
+  cursor: pointer;
+  border-radius: $borderRadiusSmall;
+  box-shadow:none;
+  border:none;
+  float:right;
+}

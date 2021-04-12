@@ -1,0 +1,28 @@
+@import '../../styles/_variables.scss';
+.generator__css{
+  border-radius: $borderRadiusBig;
+  background-color: $colorLight;
+  padding: 40px;
+  margin-top: 60px;
+  position: relative;
+  .copyButton {
+    position:absolute;
+    top:40px;
+    right:40px;
+  }
+}
+pre{
+  font-family: inherit;
+  font-size: 14px;
+  background-color: $colorDark;
+  padding: 20px;
+  border-radius: $borderRadiusBig;
+  color: $colorLight;
+  overflow-x: hidden;
+}
+@media (max-width: 992px){
+  .generator__css{
+    width:100% !important;
+    margin-top: 30px;
+  }
+}

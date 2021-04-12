@@ -1,0 +1,14 @@
+@import "../../../styles/_variables.scss";
+.generator__preview__background {
+  height: 100%;
+  width: 100%;
+  border-radius: $borderRadiusBig;
+  padding: 20px;
+  background: url("https://pics.freeicons.io/uploads/icons/png/8122551761583400157-512.png");
+  background-repeat: no-repeat;
+}
+.backgroundWrapper {
+  .copyButton {
+    float: right;
+  }
+}

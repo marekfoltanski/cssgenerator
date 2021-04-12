@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+.imagesGenerator {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  &__item {
+    height: 230px;
+    border-radius: $borderRadiusSmall;
+    background-color: #f7f7f7;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      @include transition();
+    }
+    &:hover:after {
+      background-color: transparentize($color1, 0.7);
+    }
+    &.active:after {
+      border: 4px solid $color1;
+      background-color: transparentize($color1, 0.7);
+    }
+  }
+}

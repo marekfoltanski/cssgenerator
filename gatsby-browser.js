@@ -5,3 +5,5 @@
  */
 
 // You can delete this file if you're not using it
+import "./src/styles/global.scss"
+import "./src/styles/bootstrap-grid.min.css"

@@ -1,0 +1,57 @@
+@import '../../../styles/_variables.scss';
+@import '../../../styles/_mixins.scss';
+.flexboxPreview{
+  width:100%;
+  height:100%;
+}
+.flexboxPreview__wrapper{
+  border: 3px dashed $color1;
+  border-radius: $borderRadiusBig;
+  padding: 15px;
+  height: 100%;
+  div{
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: $borderRadiusBig;
+    background-color: $color1;
+    margin: 10px;
+    padding: 10px;
+    color: $colorLight;
+    &:nth-child(2){
+      min-height: 140px;
+    }
+  }
+}
+.btnWrapper{
+  width:100%;
+  display:flex;
+  .btnSmall{
+    flex:1;
+    padding: 4px 12px;
+    font-size: 14px;
+    display: inline-block;
+    border: 2px solid $colorDark;
+    border-radius: $borderRadiusSmall;
+    background-color: transparent;
+    color: $colorDark;
+    font-family: $fontFamily;
+    outline: none;
+    cursor: pointer;
+    @include transition();
+    &:hover{
+      background-color: $colorDark;
+      color: $colorLight;
+    }
+    &:first-child{
+      margin-right:8px;
+    }
+  }
+}
+[data-active="noactive"] {
+  opacity:0.5;
+  cursor: not-allowed !important;
+  &:hover{
+    background-color: transparent !important;
+    color: $colorDark !important;
+  }
+}

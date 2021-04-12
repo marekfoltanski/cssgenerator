@@ -1,0 +1,10 @@
+@import '../../styles/_variables.scss';
+
+.PageHeader{
+  background-color: $colorDark;
+  &__content{
+    padding:30px;
+    color:$colorLight;
+    width:100%;
+  }
+}

@@ -1,0 +1,13 @@
+@import '../../styles/_variables.scss';
+select{
+  float: right;
+  width: 120px;
+  margin-left: 14px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: $borderRadiusSmall;
+  background-color: $colorGrey;
+  cursor: pointer;
+  font-family: $fontFamily;
+}

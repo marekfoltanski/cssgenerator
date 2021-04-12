@@ -1,0 +1,84 @@
+@import '../../styles/_variables.scss';
+@import '../../styles/_mixins.scss';
+.navTop{
+  &__wrapper{
+    width:100%;
+    padding: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background-color: $colorDark;
+  }
+  &__logo a{
+    color: $colorLight;
+  }
+  .hamburger{
+    display: none;
+    background-color: transparent;
+    border: none;
+    height: 30px;
+    width: 40px;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 999;
+    &:focus{
+      outline:none;
+    }
+    &:before{
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 2px;
+      border-radius: $borderRadiusSmall;
+      background-color: $colorLight;
+      transform-origin: left;
+      @include transition();
+    }
+    &:after{
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 2px;
+      transform-origin: left;
+      border-radius: $borderRadiusSmall;
+      background-color: $colorLight;
+      @include transition();
+    }
+    & > span{
+      display: block;
+      opacity: 1;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      height: 2px;
+      border-radius: 4px;
+      background-color: #fff;
+      @include transition();
+    }
+    &.open:before{
+      transform: rotate(45deg);
+    }
+    &.open > span{
+      transform: translateX(40px);
+      opacity: 0;
+    }
+    &.open:after{
+      transform: rotate(-45deg);
+    }
+  }
+}
+@media (max-width: 768px){
+    .navTop .hamburger{
+      display:block;
+    }
+}

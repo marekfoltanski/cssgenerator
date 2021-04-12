@@ -1,0 +1,63 @@
+@import '../../styles/_variables.scss';
+.generator{
+  padding: 0 60px 60px 60px;
+  &__input{
+    padding: 40px;
+    background-color: $colorLight;
+    border-radius: $borderRadiusBig;
+    min-width: 400px;
+  }
+  &__preview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-direction: column;
+    margin-left: 60px;
+    padding:30px;
+    background-color: $colorLight;
+    border-radius: $borderRadiusBig;
+    overflow:hidden;
+    @media (min-width: 1200px){
+      min-height: 500px;
+    }
+    
+  }
+  & .row:nth-child(1){
+    flex-wrap: nowrap;
+  }
+  & .row:nth-child(2){
+    justify-content: flex-end;
+  }
+}
+.modal__wrapper .generator{
+  padding:0;
+}
+@media (max-width: 992px){
+  .generator{
+    padding: 0 30px 30px 30px;
+    &__preview{
+      margin-left:30px;
+    }
+  }
+  .modal__wrapper .generator{
+    padding:0;
+  }
+}
+
+@media (max-width: 768px){
+  .generator{
+    padding-top:30px;
+    .row{
+      flex-direction:column;
+    }
+    &__input{
+      min-width:auto;
+    }
+    &__preview{
+      margin-left:0;
+      margin-top:30px;
+      min-height:400px;
+    }
+  }
+}

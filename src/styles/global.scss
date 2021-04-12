@@ -1,0 +1,47 @@
+@import '_variables.scss';
+html, body{
+  margin:0;
+  padding:0;
+  font-family: 'Roboto Mono', monospace;
+  font-size:16px;
+  overflow-x: hidden;
+}
+body{
+  background-color: $colorGrey;
+}
+a{
+  color:$color1;
+  text-decoration: none;
+  transition: all .2s ease-out;
+  &:hover{
+    color: $color2;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin-top: 0;
+}
+h2{
+  font-size:22px;
+}
+p{
+  margin-top: 0;
+  line-height: 1.7em;
+}
+.clearfix {
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+button, input{
+  font-family:$fontFamily;
+  &:focus{
+    outline:none;
+  }
+}
+button{
+  cursor:pointer;
+  font-size:16px;
+}

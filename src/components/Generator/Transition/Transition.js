@@ -34,7 +34,6 @@ transition: ${cssStyles};`
     )
   }
   render() {
-    console.log(this.fullStyles());
     return (
       <GeneratorWrapper>
         <div className="row transitionWrapper">

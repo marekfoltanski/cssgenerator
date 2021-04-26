@@ -37,10 +37,15 @@ class ToggleButtons extends React.Component {
 }
 ToggleButtons.propTypes = {
   active: PropTypes.string,
+  changeFn: PropTypes.func.isRequired,
+  first: PropTypes.string,
+  second: PropTypes.string,
 }
 
 ToggleButtons.defaultProps = {
   active: "0",
+  first: "First",
+  second: "Second",
 }
 
 export default ToggleButtons

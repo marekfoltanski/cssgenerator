@@ -1,8 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Tooltip from './Tooltip'
 import './CopyButton.scss'
 
 class CopyButton extends React.Component {
+  _isMounted = false;
   state = {
     isCopied: false,
   }
@@ -37,6 +39,10 @@ class CopyButton extends React.Component {
       </>
     )
   }
+}
+
+CopyButton.propTypes = {
+  selector: PropTypes.string.isRequired,
 }
 
 export default CopyButton

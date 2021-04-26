@@ -19,12 +19,15 @@ class Background extends React.Component {
     image: "https://img.icons8.com/android/2x/happy.png",
     size: "auto",
     gradient: "",
+    positionX: 'left',
+    positionY: 'top',
+    repeat: "repeat",
     modal: {
       isOpen: false,
       type: "",
     },
   }
-  setImage = value => {
+  gradinetHandler = value => {
     this.setState({
       gradient: value,
     })
@@ -56,12 +59,18 @@ class Background extends React.Component {
       },
     })
   }
-  styles = {
-    background: `${this.state.color} ${this.state.image}  ${this.state.gradient}`,
-    backgroundSize: `${this.state.size}`,
+  imageHandler = (value) => {
+    this.setState({
+      image: value.replace("&h=230","&h=600"),
+    })
+    this.closeModal();
   }
   fullStyles = () => {
-    return ``
+    return `background-color: ${this.state.color},
+background-image: ${this.state.gradient.css ? this.state.gradient.css + ", " : ""} url(${this.state.image});
+background-size: ${this.state.size};
+background-position: ${this.state.positionX} ${this.state.positionY};
+background-repeat: ${this.state.repeat};`
   }
   render() {
     return (
@@ -94,21 +103,65 @@ class Background extends React.Component {
                 length="500"
               />
             </InputItem>
-            <button name="gradient" onClick={this.openModal}>
-              gradient
-            </button>
+
+            <InputItem>
+              <label htmlFor="gradient">Gradient:</label>
+              <button className="copyButton" name="gradient" onClick={this.openModal}>
+                Wybierz
+              </button>
+              
+            </InputItem>
+
+            <InputItem>
+              <label htmlFor="size">Size:</label>
+              <Select
+                name="size"
+                values={["auto", "cover", "contain", "25%", "50%", "75%", "100%"]}
+                changeFn={this.changeHandler}
+              />
+            </InputItem>
+
+            <InputItem>
+              <label htmlFor="positionX">Position X:</label>
+              <Select
+                name="positionX"
+                values={["left", "right", "center", "25%", "50%", "75%", "100%"]}
+                changeFn={this.changeHandler}
+              />
+            </InputItem>
+            <InputItem>
+              <label htmlFor="positionY">Position Y:</label>
+              <Select
+                name="positionY"
+                values={["top", "bottom", "center", "25%", "50%", "75%", "100%"]}
+                changeFn={this.changeHandler}
+              />
+            </InputItem>
+
+            <InputItem>
+              <label htmlFor="repeat">Repeat:</label>
+              <Select
+                name="repeat"
+                values={["repeat", "no-repeat", "repeat-x", "repeat-y"]}
+                changeFn={this.changeHandler}
+              />
+            </InputItem>
+            
           </GeneratorInput>
 
           <GeneratorPreview>
             <div
-              className={`generator__preview__background ${this.state.property}`}
+              className={`generator__preview__background`}
               style={{
-                background: `${
+                backgroundColor: `${this.state.color}`,
+                backgroundImage: `${
                   this.state.gradient.css ? this.state.gradient.css + ", " : ""
-                }url(${this.state.image}) ${this.state.color}`,
+                }url(${this.state.image})`,
+                backgroundSize: `${this.state.size}`,
+                backgroundPosition: `${this.state.positionX} ${this.state.positionY}`,
+                backgroundRepeat: `${this.state.repeat}`,
               }}
             ></div>
-            {console.log(this.state.gradient.css)}
           </GeneratorPreview>
         </div>
         <div className="row">
@@ -117,15 +170,15 @@ class Background extends React.Component {
 
         {this.state.modal.isOpen && (
           <Modal closeFn={this.closeModal}>
-            {this.state.modal.type == "gradient" && (
+            {this.state.modal.type === "gradient" && (
               <Gradient
                 modal
-                clickFn={this.setImage}
+                clickFn={this.gradinetHandler}
                 gradient={this.state.gradient.values}
               />
             )}
 
-            {this.state.modal.type == "image" && <ImagesGenerator />}
+            {this.state.modal.type === "image" && <ImagesGenerator clickFn={this.imageHandler} />}
           </Modal>
         )}
       </GeneratorWrapper>

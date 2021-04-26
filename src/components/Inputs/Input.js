@@ -36,6 +36,7 @@ Input.propTypes = {
   step: PropTypes.string,
   value: PropTypes.string.isRequired,
   changeFn: PropTypes.func,
+  length: PropTypes.string,
 }
 
 Input.defaultProps = {

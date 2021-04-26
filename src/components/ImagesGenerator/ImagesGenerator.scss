@@ -12,6 +12,11 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    &:first-child{
+      background-size: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
     &:after {
       content: "";
       display: block;

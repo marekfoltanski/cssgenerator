@@ -124,7 +124,7 @@ class Gradient extends React.Component {
                 second="Radial"
                 changeFn={this.linearRadial}
                 active={
-                  this.state.linearRadial == "linear-gradient" ? "0" : "1"
+                  this.state.linearRadial === "linear-gradient" ? "0" : "1"
                 }
               />
             </InputItem>
@@ -221,6 +221,7 @@ class Gradient extends React.Component {
           </div>
         ) : (
           <button
+          className="copyButton saveButton"
             onClick={() => {
               this.props.clickFn({
                 css: this.setStyles().backgroundImage,
@@ -228,7 +229,7 @@ class Gradient extends React.Component {
               })
             }}
           >
-            Klik
+            Zapisz
           </button>
         )}
       </GeneratorWrapper>

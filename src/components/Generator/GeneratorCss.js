@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from "prop-types"
 import CopyButton from '../Inputs/CopyButton'
 import './GeneratorCss.scss'
 
@@ -23,6 +24,10 @@ class GeneratorCss extends React.Component {
       </div>
     )
   }
+}
+
+GeneratorCss.propTypes = {
+  styles: PropTypes.func.isRequired,
 }
 
 export default GeneratorCss

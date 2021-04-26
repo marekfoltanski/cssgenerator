@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from "prop-types"
 import './Select.scss'
 
 const Select = ({name, values, changeFn}) => (
@@ -10,5 +11,11 @@ const Select = ({name, values, changeFn}) => (
     }
   </select>
 )
+
+Select.propTypes = {
+  name: PropTypes.string.isRequired,
+  values: PropTypes.array.isRequired,
+  changeFn: PropTypes.func.isRequired,
+}
 
 export default Select

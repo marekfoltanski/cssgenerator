@@ -3,7 +3,6 @@ import GeneratorWrapper from "../GeneratorWrapper"
 import GeneratorInput from "../GeneratorInput"
 import GeneratorPreview from "../GeneratorPreview"
 import InputItem from "../../Inputs/InputItem"
-import Select from "../../Inputs/Select"
 import Input from "../../Inputs/Input"
 
 import GeneratorCss from "../GeneratorCss"

@@ -2,11 +2,11 @@ import React from 'react'
 import PageHeader from '../components/PageHeader/PageHeader'
 import NavPages from '../components/NavPages/NavPages'
 import BorderRadius from '../components/Generator/BorderRadius/BorderRadius'
-import SEO from '../components/SEO/SEO'
+import Seo from '../components/Seo/Seo'
 
 const BorderRadiusPage = ({location}) => (
 <>
-  <SEO
+  <Seo
     title="CSS Border radius generator | CSSGENERATOR.PL"
     description="CSS BORDER RADIUS GENERATOR | Wygodne narzędzie, dzięki któremu wygenerujesz gotowe reguły CSS. Dostosuj wartości i skopiuj gotowy kod."
     location={location}

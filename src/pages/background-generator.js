@@ -2,11 +2,11 @@ import React from 'react'
 import PageHeader from '../components/PageHeader/PageHeader'
 import NavPages from '../components/NavPages/NavPages'
 import Background from '../components/Generator/Background/Background'
-import SEO from '../components/SEO/SEO'
+import Seo from '../components/Seo/Seo'
 
 const BackgroundPage = ({location}) => (
 <>
-  <SEO
+  <Seo
     title="CSS Background generator | CSSGENERATOR.PL"
     description="CSS BACKGROUND GENERATOR | Wygodne narzędzie, dzięki któremu wygenerujesz gotowe reguły CSS. Dostosuj wartości i skopiuj gotowy kod."
     location={location}

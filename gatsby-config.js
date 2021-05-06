@@ -40,14 +40,16 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `roboto mono\:400,700` // you can also specify font weights and styles
-        ],
-        display: 'swap'
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts-v2`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Roboto Mono:wght@400;700`,
+    //       }
+    //     ]
+    //   }
+    // },
+    `gatsby-plugin-preload-fonts`,
   ],
 }

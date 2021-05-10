@@ -1,81 +1,92 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
-.modal__bg{
-    width:100vw;
-    height:100vw;
-    background-color: rgba(0,0,0,0.5);
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:1;
+.modal__bg {
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
-.modal__wrapper{
-    display:flex;
-    flex-direction: column;
-    background-color:#fff;
-    padding:20px 20px 80px 20px;
-    border-radius: $borderRadiusBig;
-    position: fixed;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 80vw;
-    max-width: 90vw;
+.modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px 20px 80px 20px;
+  border-radius: $borderRadiusBig;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 80vw;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 2px 2px 16px 0 rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  animation: fadeIn 0.2s ease-in-out;
+  @media (max-width: 992px) {
+    min-width: 90vw;
+    max-width: 95vw;
     max-height: 90vh;
-    overflow: hidden;
-    box-shadow: 2px 2px 16px 0 rgba(0,0,0,0.1);
-    z-index:2;
-    animation: fadeIn .2s ease-in-out;
-    &__header{
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-bottom: 20px;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+  .modal__title {
+    font-weight: bold;
+  }
+  .modal__close {
+    width: 30px;
+    height: 30px;
+    background-color: $color1;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-radius: $borderRadiusSmall;
+    position: relative;
+    @include transition();
+    &:before {
+      content: "\d7";
+      display: block;
+      color: #fff;
+      font-size: 36px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      line-height: 27px;
     }
-    .modal__title{
-        font-weight: bold;
+    &:hover {
+      background-color: $color2;
     }
-    .modal__close{
-        width:30px;
-        height: 30px;
-        background-color: $color1;
-        outline: none;
-        box-shadow: none;
-        border: none;
-        border-radius: $borderRadiusSmall;
-        position:relative;
-        @include transition();
-        &:before{
-            content:"\d7";
-            display:block;
-            color:#fff;
-            font-size: 36px;
-            position:absolute;
-            top: 0;
-            left:0;
-            right:0;
-            bottom:0;
-            line-height:27px;
-        }
-        &:hover{
-            background-color: $color2;
-        }
+  }
+  .modal__content {
+    padding-right: 20px;
+    overflow-y: scroll;
+    @include scroll();
+    .saveButton {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
     }
-    .modal__content{
-        padding-right:20px;
-        overflow-y: scroll;
-        @include scroll();
-        .saveButton{
-            position:absolute;
-            bottom:20px;
-            left:50%;
-            transform: translateX(-50%);
-            padding: 10px 20px;
-        }
-    }
+  }
 }
-@keyframes fadeIn{
-    0% { top:calc(50% + 100px); opacity: 0 }
-    100% {top:50%; opacity: 1}
+@keyframes fadeIn {
+  0% {
+    top: calc(50% + 100px);
+    opacity: 0;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
 }

@@ -1,16 +1,21 @@
-@import '../../styles/_variables.scss';
-@import '../../styles/_mixins.scss';
-.navTop{
-  &__wrapper{
-    width:100%;
+@import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
+
+.navTop {
+  &__wrapper {
+    width: 100%;
     padding: 30px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     background-color: $colorDark;
+    @media (max-width: 500px) {
+      padding: 20px;
+    }
   }
-  &__logo a{
+
+  &__logo a {
     color: $colorLight;
   }
-  .hamburger{
+  .hamburger {
     display: none;
     background-color: transparent;
     border: none;
@@ -23,11 +28,18 @@
     margin: 0;
     cursor: pointer;
     z-index: 999;
-    &:focus{
-      outline:none;
+    @media (max-width: 500px) {
+      right: 20px;
+      top: 15px;
     }
-    &:before{
-      content: '';
+    &.open {
+      position: fixed;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:before {
+      content: "";
       display: block;
       width: 100%;
       position: absolute;
@@ -39,8 +51,8 @@
       transform-origin: left;
       @include transition();
     }
-    &:after{
-      content: '';
+    &:after {
+      content: "";
       display: block;
       width: 100%;
       position: absolute;
@@ -52,7 +64,7 @@
       background-color: $colorLight;
       @include transition();
     }
-    & > span{
+    & > span {
       display: block;
       opacity: 1;
       width: 100%;
@@ -65,20 +77,20 @@
       background-color: #fff;
       @include transition();
     }
-    &.open:before{
+    &.open:before {
       transform: rotate(45deg);
     }
-    &.open > span{
+    &.open > span {
       transform: translateX(40px);
       opacity: 0;
     }
-    &.open:after{
+    &.open:after {
       transform: rotate(-45deg);
     }
   }
 }
-@media (max-width: 768px){
-    .navTop .hamburger{
-      display:block;
-    }
+@media (max-width: 768px) {
+  .navTop .hamburger {
+    display: block;
+  }
 }

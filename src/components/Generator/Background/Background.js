@@ -19,8 +19,8 @@ class Background extends React.Component {
     image: "https://img.icons8.com/android/2x/happy.png",
     size: "auto",
     gradient: "",
-    positionX: 'left',
-    positionY: 'top',
+    positionX: "left",
+    positionY: "top",
     repeat: "repeat",
     modal: {
       isOpen: false,
@@ -59,15 +59,17 @@ class Background extends React.Component {
       },
     })
   }
-  imageHandler = (value) => {
+  imageHandler = value => {
     this.setState({
-      image: value.replace("&h=230","&h=600"),
+      image: value.replace("&h=230", "&h=600"),
     })
-    this.closeModal();
+    this.closeModal()
   }
   fullStyles = () => {
-    return `background-color: ${this.state.color},
-background-image: ${this.state.gradient.css ? this.state.gradient.css + ", " : ""} url(${this.state.image});
+    return `background-color: ${this.state.color};
+background-image: ${
+      this.state.gradient.css ? this.state.gradient.css + ", " : ""
+    } url(${this.state.image});
 background-size: ${this.state.size};
 background-position: ${this.state.positionX} ${this.state.positionY};
 background-repeat: ${this.state.repeat};`
@@ -106,17 +108,28 @@ background-repeat: ${this.state.repeat};`
 
             <InputItem>
               <label htmlFor="gradient">Gradient:</label>
-              <button className="copyButton" name="gradient" onClick={this.openModal}>
+              <button
+                className="copyButton"
+                name="gradient"
+                onClick={this.openModal}
+              >
                 Wybierz
               </button>
-              
             </InputItem>
 
             <InputItem>
               <label htmlFor="size">Size:</label>
               <Select
                 name="size"
-                values={["auto", "cover", "contain", "25%", "50%", "75%", "100%"]}
+                values={[
+                  "auto",
+                  "cover",
+                  "contain",
+                  "25%",
+                  "50%",
+                  "75%",
+                  "100%",
+                ]}
                 changeFn={this.changeHandler}
               />
             </InputItem>
@@ -125,7 +138,15 @@ background-repeat: ${this.state.repeat};`
               <label htmlFor="positionX">Position X:</label>
               <Select
                 name="positionX"
-                values={["left", "right", "center", "25%", "50%", "75%", "100%"]}
+                values={[
+                  "left",
+                  "right",
+                  "center",
+                  "25%",
+                  "50%",
+                  "75%",
+                  "100%",
+                ]}
                 changeFn={this.changeHandler}
               />
             </InputItem>
@@ -133,7 +154,15 @@ background-repeat: ${this.state.repeat};`
               <label htmlFor="positionY">Position Y:</label>
               <Select
                 name="positionY"
-                values={["top", "bottom", "center", "25%", "50%", "75%", "100%"]}
+                values={[
+                  "top",
+                  "bottom",
+                  "center",
+                  "25%",
+                  "50%",
+                  "75%",
+                  "100%",
+                ]}
                 changeFn={this.changeHandler}
               />
             </InputItem>
@@ -146,7 +175,6 @@ background-repeat: ${this.state.repeat};`
                 changeFn={this.changeHandler}
               />
             </InputItem>
-            
           </GeneratorInput>
 
           <GeneratorPreview>
@@ -178,7 +206,9 @@ background-repeat: ${this.state.repeat};`
               />
             )}
 
-            {this.state.modal.type === "image" && <ImagesGenerator clickFn={this.imageHandler} />}
+            {this.state.modal.type === "image" && (
+              <ImagesGenerator clickFn={this.imageHandler} />
+            )}
           </Modal>
         )}
       </GeneratorWrapper>

@@ -1,17 +1,17 @@
-@import '../../styles/_variables.scss';
-.generator__css{
+@import "../../styles/_variables.scss";
+.generator__css {
   border-radius: $borderRadiusBig;
   background-color: $colorLight;
   padding: 40px;
   margin-top: 60px;
   position: relative;
   .copyButton {
-    position:absolute;
-    top:40px;
-    right:40px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
   }
 }
-pre{
+pre {
   font-family: inherit;
   font-size: 14px;
   background-color: $colorDark;
@@ -20,9 +20,25 @@ pre{
   color: $colorLight;
   overflow-x: hidden;
 }
-@media (max-width: 992px){
-  .generator__css{
-    width:100% !important;
+@media (max-width: 992px) {
+  .generator__css {
+    width: 100% !important;
     margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .generator__css {
+    pre {
+      overflow-x: scroll;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .generator__css {
+    padding: 20px;
+    .copyButton {
+      top: 20px;
+      right: 20px;
+    }
   }
 }

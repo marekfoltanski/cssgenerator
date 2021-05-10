@@ -1,10 +1,13 @@
-@import '../../styles/_variables.scss';
+@import "../../styles/_variables.scss";
 
-.PageHeader{
+.PageHeader {
   background-color: $colorDark;
-  &__content{
-    padding:30px;
-    color:$colorLight;
-    width:100%;
+  &__content {
+    padding: 30px;
+    color: $colorLight;
+    width: 100%;
+    @media (max-width: 500px) {
+      padding: 20px;
+    }
   }
 }
